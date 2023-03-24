@@ -1,0 +1,16 @@
+<?php
+namespace App\{moduleContainer}\{{module}}\Entities;
+
+use App\Core\Entities\BaseModel;
+/**
+ * Class {module}
+ * @package App\{moduleContainer}\{{module}}\Entities
+ */
+class {module} extends BaseModel
+{
+    /**
+     * @var array
+     */
+    protected $fillable = [];
+
+}

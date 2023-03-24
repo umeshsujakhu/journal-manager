@@ -1,0 +1,14 @@
+<?php
+namespace App\{moduleContainer}\{{module}}\Requests;
+
+/**
+ * Class {module}UpdateRequest
+ * @package App\{moduleContainer}\{{module}}\Requests
+ */
+class {module}UpdateRequest extends {module}Request
+{
+    public function rules (): array
+    {
+        return [];
+    }
+}

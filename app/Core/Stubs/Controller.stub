@@ -1,0 +1,76 @@
+<?php
+
+namespace App\{moduleContainer}\{{module}}\Controllers;
+
+use App\{moduleContainer}\{{module}}\Interfaces\{module}Interface;
+use App\{moduleContainer}\{{module}}\Requests\{module}CreateRequest;
+use App\{moduleContainer}\{{module}}\Requests\{module}DeleteRequest;
+use App\{moduleContainer}\{{module}}\Requests\{module}Request;
+use App\{moduleContainer}\{{module}}\Requests\{module}UpdateRequest;
+use App\Core\Controllers\BaseController;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+/**
+ * Class {{module}}Controller
+ * @package App\{moduleContainer}\{{module}}\Controllers
+ */
+class {{module}}Controller extends BaseController {
+
+     /**
+     * @var {module}Interface
+     */
+     protected $repository;
+
+    /**
+     * {{module}}Controller constructor.
+     * @param {module}Interface $repository
+     */
+    public function __construct({module}Interface $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    /**
+     * @param {module}Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index({module}Request $request){
+        return $this->responseSuccess($this->repository->getList($request->all()));
+    }
+
+    /**
+     * @param {module}CreateRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function create({module}CreateRequest $request){
+        return $this->responseSuccess($this->repository->create($request->all()));
+    }
+
+    /**
+     * @param {module}UpdateRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update({module}UpdateRequest $request,$id){
+        return $this->responseSuccess($this->repository->update($id,$request->all()));
+    }
+
+    /**
+     * @param {module}DeleteRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function delete({module}DeleteRequest $request,$id){
+        return $this->responseSuccess($this->repository->delete($id));
+    }
+
+    /**
+     * @param {module}Request $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show ({module}Request $request,$id){
+        return $this->responseSuccess($this->repository->getById($id));
+    }
+
+}

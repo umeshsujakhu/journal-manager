@@ -1,0 +1,30 @@
+<?php
+
+namespace App\{moduleContainer}\{{module}}\Repositories;
+
+use App\Core\Repositories\BaseRepository;
+use App\{moduleContainer}\{{module}}\Interfaces\{module}Interface;
+use App\{moduleContainer}\{{module}}\Entities\{module};
+
+/**
+ * Class {module}Repository
+ * @package App\{moduleContainer}\{{module}}\Repositories
+ */
+class {module}Repository extends BaseRepository implements {module}Interface
+{
+    /**
+     * @var {module}
+     */
+    protected $model;
+
+    /**
+     * {module}Repository constructor.
+     * @param {module} $model
+     */
+    public function __construct({module} $model)
+    {
+        parent::__construct($model);
+        $this->model = $model;
+    }
+
+}

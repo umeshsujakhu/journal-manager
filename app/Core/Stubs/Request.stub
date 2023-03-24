@@ -1,0 +1,13 @@
+<?php
+namespace App\{moduleContainer}\{{module}}\Requests;
+
+use App\Core\Requests\ApiRequest;
+
+/**
+ * Class {module}Request
+ * @package App\{moduleContainer}\{{module}}\Requests
+ */
+class {module}Request extends ApiRequest
+{
+
+}
